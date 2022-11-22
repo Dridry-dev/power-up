@@ -1,24 +1,7 @@
 class PrestationsController < ApplicationController
-  def index
-    @prestations = Prestation.all
-  end
-
-  def new
-    @prestation = Prestation.new
-  end
-
-  def create
-  end
 
   def show
+    @prestation = Prestation.find(params[:id])
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end
