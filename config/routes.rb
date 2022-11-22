@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show edit update] do
     resources :prestations, exept: :destroy
     resources :bookings, exept: :destroy
+    namespace :clients do
+      resources :bookings, only: %i[index edit update]
+    end
   end
   resources :prestations, only: :destroy
   resources :bookings, only: :destroy
