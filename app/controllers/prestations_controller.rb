@@ -1,24 +1,17 @@
 class PrestationsController < ApplicationController
-  def index
-    @prestations = Prestation.all
-  end
+  before_action :set_prestation, only: :show
 
-  def new
+  def show
     @prestation = Prestation.new
   end
 
-  def create
+  private
+
+  def prestation_params
+    params.require(:prestation).permit(:name, :description, :price) # Remove :user
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
+  def set_prestation
+    @prestation = Prestation.find(params[:id])
   end
 end

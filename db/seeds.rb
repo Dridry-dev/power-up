@@ -11,11 +11,13 @@ require "open-uri"
 
 puts 'Cleaning database...'
 User.destroy_all
+Prestation.destroy_all
+Booking.destroy_all
 puts 'Database cleaned'
 
 url = "https://www.superheroapi.com/api.php/10229599919482949/"
+puts "Importing 10 random heroes"
 10.times do
-  puts "Importing 10 random heroes"
   random_id_hero = rand(1..731).to_i
   buddies = JSON.parse(URI.open("#{url}#{random_id_hero}").read)
   puts "Creating #{buddies['name']}"
@@ -26,5 +28,15 @@ url = "https://www.superheroapi.com/api.php/10229599919482949/"
     email: "email#{random_id_hero}@mail.com"
   )
   puts "Created #{buddies['name']}"
+end
+
+puts "Importing 10 fakes prestations"
+10.times do
+  Prestation.create(
+    name: "Shampoing man",
+    description: "Ceci est une superbe descrpiton d'un personnage emblématique de la série télévisée HeroCorp",
+    price: 9.99
+  )
+  puts "Importation done !"
 end
 puts 'Finished!'

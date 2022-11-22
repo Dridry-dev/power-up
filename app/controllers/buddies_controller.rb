@@ -1,9 +1,9 @@
-class UsersController < ApplicationController
+class BuddiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_list, only: :show
+  before_action :set_buddy, only: :show
 
   def index
-    @users = User.all
+    @buddies = User.all
   end
 
   def show
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :mail, :description, :photo)
   end
 
-  def set_user
-    @user = User.find(params[:id])
+  def set_buddy
+    @buddy = User.find(params[:id])
   end
 end

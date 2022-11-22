@@ -1,1 +1,14 @@
 <h1>Prestation index</h1>
+<ul>
+  <% @prestations.each do |presta| %>
+  <li>
+    <%= presta.name %>
+    <%# if policy(presta).edit? %>
+      <%= link_to "Edit this prestation", edit_prestation_path(presta) %>
+    <%# end %>
+    <%# if policy(presta).destroy? %>
+      <%= button_to "Destroy this prestation", presta, method: :delete %>
+    <%# end %>
+  </li>
+  <% end %>
+</ul>
