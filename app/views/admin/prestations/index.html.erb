@@ -1,0 +1,9 @@
+<% @prestations.each do |presta|  %>
+<ul>
+<li><%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></li>
+<li><%= presta.description  %></li>
+<li><%= presta.price %>€</li>
+<li><%= link_to 'modifier', edit_admin_prestation_path(presta) %> </li>
+<li><%= link_to 'supprimer', admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "are you sure Biatch?"} %> </li>
+</ul>
+<% end %>
