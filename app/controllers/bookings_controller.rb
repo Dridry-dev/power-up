@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
-  before_action :set_presta, only: %i[new create]
+  before_action :set_presta, only: %i[new create update destroy]
+  before_action :set_booking, only: %i[show edit update destroy]
 
   def index
     @bookings = Booking.all
@@ -27,15 +28,26 @@ class BookingsController < ApplicationController
   end
 
   def update
+    if @booking.update(booking_params)
+      redirect_to prestation_bookings_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @booking.destroy
+    redirect_to prestation_bookings_path, status: :see_other
   end
 
   private
 
   def set_presta
     @prestation = Prestation.find(params[:prestation_id])
+  end
+
+  def set_booking
+    @booking = Booking.find(params[:id])
   end
 
   def booking_params
