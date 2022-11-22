@@ -1,1 +1,6 @@
 <h1>New Booking</h1>
+
+<%= simple_form_for [@prestation, @booking], method: :create  do |f| %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
