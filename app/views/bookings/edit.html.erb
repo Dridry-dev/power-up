@@ -1,1 +1,6 @@
 <h1>Booking Edit</h1>
+<%= link_to '<- Back', prestation_bookings_path(@prestation) %>
+<%= simple_form_for [@prestation, @booking], method: :patch  do |f| %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.submit class: "btn btn-primary" %>
+<% end %>
