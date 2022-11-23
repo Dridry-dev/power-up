@@ -1,1 +1,7 @@
-<h1>Prestation index</h1>
+<% @prestations.each do |presta|  %>
+  <ul>
+  <li><%= link_to presta.name, prestation_path(presta), class:"text-decoration-none" %></li>
+  <li><%= presta.description  %></li>
+  <li><%= presta.price %>€</li>
+  </ul>
+<% end %>
