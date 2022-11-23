@@ -1,11 +1,12 @@
 <h1>Booking index maggle</h1>
 <%# list from nearest to farest %>
+<%= link_to 'New Booking', new_prestation_booking_path %>
 <ul>
   <% @bookings.each do |booking| %>
   <li>
-  <%= link_to 'See details', booking_path(booking) %>
+  <%= link_to 'See details', booking_path(id: booking.id, prestation_id: booking.prestation.id) %>
   <%= booking.date %>
-  <%= link_to "Edit", edit_booking_path(booking) %>
+  <%= link_to "Edit", edit_booking_path(id: booking.id, prestation_id: booking.prestation.id) %>
   <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
   </li>
   <% end %>
