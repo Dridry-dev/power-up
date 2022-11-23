@@ -3,6 +3,6 @@
 
   <ul>
       <% @buddies.each do |buddy|%>
-        <li><%= link_to buddy.name, buddy_path(buddy), class: "btn btn-primary" %> </li>
+        <li><%= link_to "buddy.name", buddy_path(buddy), class: "btn btn-primary" %> </li>
         <% end %>
     </ul>
