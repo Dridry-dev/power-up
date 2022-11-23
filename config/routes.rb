@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "buddies#index"
-  resources :buddies, only: %i[index show edit update] do
+  resources :buddies, only: %i[index show edit update profil] do
     resources :prestations, only: :show do
       resources :bookings, except: :destroy
     end

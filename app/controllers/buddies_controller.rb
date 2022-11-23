@@ -1,6 +1,6 @@
 class BuddiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_buddy, only: :show
+  before_action :set_buddy, only: [:show, :profil]
 
   def index
     @buddies = User.all
@@ -13,6 +13,9 @@ class BuddiesController < ApplicationController
   end
 
   def update
+  end
+
+  def profil
   end
 
   private
