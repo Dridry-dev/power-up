@@ -1,1 +1,17 @@
 <h1>User</h1>
+
+  <%= @buddy.name %>
+  <%= @buddy.description %>
+
+
+<%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
+
+    <ul>
+      <% @prestations.each do |prestation| %>
+        <li><%= prestation.name %>,<%=  prestation.description %>,<%=  prestation.price %>  <%= link_to "Book mine!", new_prestation_booking_path(prestation), class: "btn btn-warning" %>
+  </li>
+        <% end %>
+    </ul>
+
+<%# <br>
+<%= link_to "Modifier ma grosse gueule", edit_buddy_path(@buddy), class: "btn btn-warning" %>
