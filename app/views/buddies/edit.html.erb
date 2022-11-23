@@ -1,6 +1,6 @@
 <h1>User Edit</h1>
 
- <%= simple_form_for(buddies_url) do |f| %>
+<%= simple_form_for(buddies_url) do |f| %>
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.submit %>
@@ -8,4 +8,4 @@
 
 <%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
 <%= link_to "Mes prestas admin", admin_prestations_path, class: "btn btn-primary" %>
-<%= link_to "Mes réservations perso", prestations_path, class: "btn btn-primary" %>
+<%# <%= link_to "Mes réservations perso", prestation_bookings_path(prestation_id: prestation.id), class: "btn btn-primary" %>
