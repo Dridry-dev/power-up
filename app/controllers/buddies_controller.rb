@@ -1,6 +1,6 @@
 class BuddiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_buddy, only: %i[show edit]
+  before_action :set_buddy, only: %i[show edit profil]
 
   def index
     @buddies = User.all
@@ -20,6 +20,10 @@ class BuddiesController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def profil
+    @prestations = Prestation.all
   end
 
   private
