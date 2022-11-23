@@ -35,4 +35,5 @@ class BuddiesController < ApplicationController
   def set_buddy
     @buddy = User.find(params[:id])
   end
+
 end
