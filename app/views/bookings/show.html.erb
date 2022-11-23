@@ -1,3 +1,5 @@
 <h1>Booking</h1>
 <%= link_to '<- Back', prestation_bookings_path(@prestation) %>
 <h2>Voici la date de votre reservation : <%= @booking.date %></h2>
+<h3>votre prestation : <%= @booking.prestation.name %></h3>
+<h3>Realisée par : <%= @booking.prestation.user.name %></h3>
