@@ -28,7 +28,7 @@ class Admin::PrestationsController < ApplicationController
   def update
     @prestation = Prestation.find(params[:id])
     @prestation.update(prestation_params)
-    redirect_to prestation_path(@prestation)
+    redirect_to admin_prestation_path(@prestation)
   end
 
   def destroy
