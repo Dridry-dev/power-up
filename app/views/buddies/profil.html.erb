@@ -1,17 +1,13 @@
-<h1>My profil</h1>
 
-<h2><%= @buddy.name  %></h2>
-<p>Description :<br>
-  <%= @buddy.description %>
-</p>
-<h3>Mes prestations</h3>
-<ul>
-  <%= @prestations.each do |prestation| %>
-    <h4><%= prestation.name %></h4>
-    <li><%= prestation.description  %></li>
-    <li><%= prestation.price %>€</li>
-    <br>
-  <% end %>
-</ul>
+<body>
+  <div class="container">
 
-<%= link_to "modifier mon profile", edit_buddy_path(@buddy)  %>
+
+  <h1><%= @buddy.name  %></h1>
+  <p>Description :<br>
+    <%= @buddy.description %>
+
+
+  <%= link_to "modifier mon profile", edit_buddy_path(@buddy)  %>
+  </div>
+</body>

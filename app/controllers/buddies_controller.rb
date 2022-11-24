@@ -3,6 +3,7 @@ class BuddiesController < ApplicationController
   before_action :set_buddy, only: %i[show edit profil]
 
   def index
+    @prestations = Prestation.all
     @buddies = User.all
   end
 
