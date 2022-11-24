@@ -1,21 +1,18 @@
-<h1>User</h1>
-
-<%#= @buddy.name %>Toto Le Rigolo
-<%= @buddy.description %>
-
-
-<%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
+<h1><%= @buddy.name  %></h1>
+<p>Description :<br>
+<%= @buddy.description %></p>
 
 <ul>
   <% @prestations.each do |prestation| %>
-    <li>
-      <%= prestation.name %>,
-      <%=  prestation.description %>,
-      <%=  prestation.price %>
-      <%= link_to "Book mine!", new_prestation_booking_path(prestation), class: "btn btn-warning" %>
+    <li><strong><%= prestation.name %></strong><br>
+      Description :<br>
+      <%=  prestation.description %><br>
+      Prix : <%=  prestation.price %>€ <br>
+      <%= link_to "Je reserve cette prestation", new_prestation_booking_path(prestation), class: "btn btn-warning" %> <br><br>
     </li>
   <% end %>
 </ul>
 
+<%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
 <%# <br>
 <%= link_to "Modifier ma grosse gueule", edit_buddy_path(@buddy), class: "btn btn-warning" %>

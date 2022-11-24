@@ -1,6 +1,6 @@
 class Admin::PrestationsController < ApplicationController
   def index
-    @prestations = Prestation.all
+    @prestations = current_user.prestations
   end
 
   def new

@@ -1,1 +1,27 @@
-<h1>index Clients Booking</h1>
+<h1>index Admin Booking</h1>
+
+<h3>Liste de toutes les demandes de prestations en attentes de validation</h3>
+<%# validation = pending %>
+<% @bookings.each do |booking| %>
+<%=  booking.date %> - <%=  booking.prestation.price %> -
+<%#= link_to "Valider", , class: "btn btn-primary" %>
+<%#= link_to "Refuser", , class: "btn btn-danger" %>
+<% end %>
+
+<h3>Liste de toutes les demandes de prestations validée et en attentes réalisation</h3>
+<%# validation = validated %>
+<% @bookings.each do |booking| %>
+<%=  booking.date %> - <%=  booking.prestation.price %> -
+<% end %>
+
+<h3>Liste de toutes les demandes de prestations refusées</h3>
+<%# validation = refused %>
+<% @bookings.each do |booking| %>
+<%=  booking.date %> - <%=  booking.prestation.price %> -
+<% end %>
+
+<h3>Liste de toutes les prestations terminées (optionnel)</h3>
+<%# validation = closed %>
+<% @bookings.each do |booking| %>
+<%=  booking.date %> - <%=  booking.prestation.price %> -
+<% end %>

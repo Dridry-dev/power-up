@@ -1,10 +1,13 @@
+<h1>List de mes prestations</h1>
+<%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation) %><br><br>
 <% @prestations.each do |presta|  %>
   <ul>
-  <li><%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></li>
-  <li><%= presta.description  %></li>
+  <li>Nom : <%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></li>
+  <li>Description : <br>
+      <%= presta.description  %>
+  </li>
   <li><%= presta.price %>€</li>
   <li><%= link_to 'modifier', edit_admin_prestation_path(presta) %> </li>
   <li><%= link_to 'supprimer', admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "are you sure Biatch?"} %> </li>
   </ul>
 <% end %>
-<li><%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation) %> </li>
