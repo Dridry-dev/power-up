@@ -1,9 +1,20 @@
-<h1>Prestation List</h1>
-
-<ul>
-  <% @prestations.each do |presta|  %>
-    <li><%= link_to presta.name, prestation_path(presta) %></li>
-    <li><%= presta.description  %></li>
-    <li><%= presta.price %>€</li>
-  <% end %>
-</ul>
+<div class="prestations-container">
+  <h1 class="titre-page">Liste de mes prestations</h1>
+  <div class="cards-product">
+    <% @prestations.each do |presta| %>
+      <div class="card-product">
+        <img src="https://picsum.photos/200" />
+        <div class="card-product-infos">
+          <h3 style= "color:rgb(24, 49, 83)"><%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></h3>
+          <p><%= presta.description  %></p>
+          <p><%= presta.price %>€</p>
+          <div>
+            <%= link_to "Réserver maintenant", new_prestation_booking_path(presta), class:"bouton-reservation" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="container">
+  </div>
+</div>
