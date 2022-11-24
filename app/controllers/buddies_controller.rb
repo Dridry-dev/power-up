@@ -1,6 +1,6 @@
 class BuddiesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
-  before_action :set_buddy, only: %i[show edit profil]
+  before_action :set_buddy, only: %i[show profil update]
 
   def index
     @buddies = User.all
@@ -12,14 +12,14 @@ class BuddiesController < ApplicationController
   end
 
   def edit
+    @buddy = User.find(params[:id])
   end
 
   def update
-    if @buddy.update(buddy_params)
-      redirect_to buddy_path(@buddy)
-    else
-      render :new, status: :unprocessable_entity
-    end
+
+    @buddy.update(buddy_params)
+    redirect_to buddy_path(@buddy)
+
   end
 
   def profil
@@ -28,7 +28,7 @@ class BuddiesController < ApplicationController
 
   private
 
-  def user_params
+  def buddy_params
     params.require(:user).permit(:name, :mail, :description, :photo)
   end
 
