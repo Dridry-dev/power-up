@@ -16,7 +16,7 @@ puts "Importing 10 random heroes"
     name: buddies['name'],
     description: buddies['connections'].first,
     # photo: photo.attach(io: buddies['image'].first, filename: "#{buddies['name']}.png", content_type: "image/png"),
-    email: "email#{random_id_hero}@mail.com",
+    email: "mail@mail.com",
     password: "azerty"
   )
   puts "Created some prestations"
