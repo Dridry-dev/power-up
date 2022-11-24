@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "buddies#index"
   resources :buddies, only: %i[index show edit update] do
     member do
-      get :profil, :as => "profil"
+      get :profil, as: "profil"
     end
   end
   resources :prestations, only: %i[show index] do
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :bookings, except: %i[index new create]
 
   namespace :admin do
-    resources :bookings, only: %i[index edit update]
+    resources :bookings, only: %i[index update]
     resources :prestations
   end
 

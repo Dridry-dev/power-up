@@ -22,14 +22,12 @@ puts "Importing 10 random heroes"
   puts "Created some prestations"
 end
 
-puts "Importing 10 prestations"
-10.times do
-  Prestation.create!(
-    name: "Solo de Monsieur Trompette",
-    description: "Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet Pouet",
-    price: 9.99,
-    user_id: User.last.id
-  )
-end
-puts "Created some prestations"
+puts "Importing une prestations"
+Prestation.create!(
+  name: "Solo de Trompette",
+  description: "Pouet Pouet Pouet Pouet Pouet Pouet",
+  price: 9.99,
+  user_id: User.last.id
+)
+puts "Created one prestation"
 puts 'Finished!'
