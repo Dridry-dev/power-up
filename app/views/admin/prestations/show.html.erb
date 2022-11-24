@@ -1,5 +1,8 @@
 <h1>Prestation</h1>
-<%= @prestation.name %>
-<%= @prestation.description %>
-<%= @prestation.price %>€
 <%= link_to  "retour", admin_prestations_path%>
+
+<h2><%= @prestation.name %></h2>
+<h3>Description</h3>
+<p><%= @prestation.description %></p>
+<br>
+<p>Prix de la prestation (par jour) : <%= @prestation.price %>€</p>

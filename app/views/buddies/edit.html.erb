@@ -1,8 +1,8 @@
 <h1>User Edit</h1>
 
-<%= simple_form_for(buddies_url) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
+<%= simple_form_for(:profil) do |f| %>
+  <%= f.input :name, placeholder: @buddy.name %>
+  <%= f.input :description, placeholder: @buddy.description %>
   <%= f.submit %>
 <% end %>
 

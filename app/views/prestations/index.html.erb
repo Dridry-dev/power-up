@@ -1,7 +1,9 @@
-<% @prestations.each do |presta|  %>
-  <ul>
-  <li><%= link_to presta.name, prestation_path(presta), class:"text-decoration-none" %></li>
-  <li><%= presta.description  %></li>
-  <li><%= presta.price %>€</li>
-  </ul>
-<% end %>
+<h1>Prestation List</h1>
+
+<ul>
+  <% @prestations.each do |presta|  %>
+    <li><%= link_to presta.name, prestation_path(presta) %></li>
+    <li><%= presta.description  %></li>
+    <li><%= presta.price %>€</li>
+  <% end %>
+</ul>

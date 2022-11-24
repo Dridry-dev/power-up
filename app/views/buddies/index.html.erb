@@ -1,8 +1,6 @@
-<h1>Users index</h1>
-
-
+<h1>Liste des buddies disponibles</h1>
   <ul>
-      <% @buddies.each do |buddy|%>
-        <li><%= link_to "buddy.name", buddy_path(buddy), class: "btn btn-primary" %> </li>
-        <% end %>
-    </ul>
+    <% @buddies.each do |buddy|%>
+      <li><%= link_to buddy.name, buddy_path(buddy)%> </li>
+      <% end %>
+  </ul>
