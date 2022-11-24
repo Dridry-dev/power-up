@@ -1,13 +1,28 @@
-<h1>List de mes prestations</h1>
-<%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation) %><br><br>
-<% @prestations.each do |presta|  %>
-  <ul>
-  <li>Nom : <%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></li>
-  <li>Description : <br>
-      <%= presta.description  %>
-  </li>
-  <li><%= presta.price %>€</li>
-  <li><%= link_to 'modifier', edit_admin_prestation_path(presta) %> </li>
-  <li><%= link_to 'supprimer', admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "are you sure Biatch?"} %> </li>
-  </ul>
-<% end %>
+<div class="prestations-container">
+  <div class="titre-page-admin">
+    <h1>Liste de mes prestations</h1>
+  </div>
+  <div class="cards-product">
+    <% @prestations.each do |presta| %>
+      <div class="card-product">
+        <img src="https://picsum.photos/200" />
+        <div class="card-product-infos">
+          <h3 style= "color:rgb(24, 49, 83)"><%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></h3>
+          <p><%= presta.description  %></p>
+          <p><%= presta.price %>€</p>
+          <%= link_to edit_admin_prestation_path(presta) do%>
+              <i class="fa-solid fa-pen"></i>
+          <% end %>
+        </div>
+        <%= link_to admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "are you sure Biatch?"} do %>
+          <i class="fa-solid fa-trash"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="container">
+    <%= link_to new_admin_prestation_path(@prestation) do %>
+      <i class="fa-solid fa-square-plus"></i>
+    <% end %>
+  </div>
+</div>
