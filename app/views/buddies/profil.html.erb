@@ -1,17 +1,21 @@
-<h1>My profil</h1>
-
-<h2><%= @buddy.name  %></h2>
-<p>Description :<br>
-  <%= @buddy.description %>
-</p>
-<h3>Mes prestations</h3>
-<ul>
-  <%= @prestations.each do |prestation| %>
-    <h4><%= prestation.name %></h4>
-    <li><%= prestation.description  %></li>
-    <li><%= prestation.price %>€</li>
-    <br>
-  <% end %>
-</ul>
-
-<%= link_to "modifier mon profile", edit_buddy_path(@buddy)  %>
+<body>
+  <div class="container">
+    <h1><%= @buddy.name  %></h1>
+    <p>Description :<br>
+      <%= @buddy.description %>
+    <h3>Mes prestations</h3>
+    <%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation), class: "btn btn-primary"%><br>
+    <ul>
+      <% @prestations.each do |prestation| %>
+        <h4><%= prestation.name %></h4>
+        <li><%= prestation.description  %></li>
+        <li><%= prestation.price %>€</li>
+        <br>
+      <% end %>
+    </ul>
+    <%= link_to "Modifier mon profil", edit_buddy_path(@buddy), class: "btn btn-primary"  %>
+    <%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
+    <%= link_to "Mes prestas admin", admin_prestations_path, class: "btn btn-primary" %>
+    <%= link_to "Historique des reservations", admin_bookings_path(@buddy), class: "btn btn-primary" %>
+   </div>
+</body>
