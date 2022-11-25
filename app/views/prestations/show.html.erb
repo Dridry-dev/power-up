@@ -1,5 +1,18 @@
-<h1>Prestation</h1>
-<%= @prestation.name %>
-<%= @prestation.description %>
-<%= @prestation.price %>€
-<%= link_to  "retour", prestations_path%>
+
+<div class="prestations-container">
+  <h1 class="titre-page">Prestations</h1>
+  <div class="cards-product">
+      <div class="card-product">
+        <img src="https://picsum.photos/200" />
+        <div class="card-product-infos">
+          <h3 style= "color:rgb(24, 49, 83)"><%= link_to presta.name, admin_prestation_path(presta), class:"titre-presta" %></h3>
+          <p><%= presta.description  %></p>
+          <p><%= presta.price %>€</p>
+          <div>
+          <%= link_to  "retour", prestations_path%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
