@@ -14,23 +14,26 @@
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 30px;
+  padding: 80px, 0px;
   background-color: white;
 }
 
 
 .icones {
   color: #183153;
-  font-size: 40px;
+  font-size: 24px;
+  width: 100%;
   display: flex;
   text-align: center;
+  justify-content: space-around;
 
 
 }
 
 .texte-taille {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .icones1 {
-  padding: 20px;
+  padding: 8px;
 }
