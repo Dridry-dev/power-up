@@ -1,36 +1,56 @@
 <div class="container">
-  <div class="cards">
-    <div class="card-category" style="background-image: url(<%= image_path "profil-carac.png" %>)">
-      <div class="buddy-caractéristiques">
-        <h1><%=  %></h1>
+    <div class="cards">
+      <div class="card-category" style="background-image: url(<%= image_path "profil-carac.png" %>)">
+        <div class="buddy-caractéristiques">
+          <h1><%=  %></h1>
+        </div>
       </div>
-    </div>
-    <div class="card-category-mid">
-      <div class="buddy-name">
-        <%= @buddy.name %><br>
-        <div class="buddy-avatar">
-          <div class="avatar-img" style="background-image:  url(https://media.vogue.fr/photos/621f567e42cb113ca47921d9/2:3/w_2560%2Cc_limit/MCDBATM_WB060.jpg)">
+      <div class="card-category-mid">
+        <div class="buddy-name">
+          <%= @buddy.name %><br>
+          <div class="buddy-avatar">
+            <div class="avatar-img" style="background-image:  url(https://media.vogue.fr/photos/621f567e42cb113ca47921d9/2:3/w_2560%2Cc_limit/MCDBATM_WB060.jpg)">
+            </div>
           </div>
         </div>
       </div>
+      <div class="card-category-btn">
+          <div class="boutons-params">
+            <%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation), class: "btn btn-primary"%>
+          </div>
+          <div class="boutons-params">
+            <%= link_to "Modifier mon profil", edit_buddy_path(@buddy), class: "btn btn-primary"  %>
+            </div>
+          <div class="boutons-params">
+            <%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %>
+            </div>
+          <div class="boutons-params">
+            <%= link_to "Mes prestas admin", admin_prestations_path, class: "btn btn-primary" %>
+            </div>
+          <div class="boutons-params">
+            <%= link_to "Historique des reservations", admin_bookings_path(@buddy), class: "btn btn-primary" %>
+            </div>
+          </div>
+      </div>
     </div>
-    <div class="card-category-btn">
-      <ul>
-        <div class="boutons-params">
-          <li><%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation), class: "btn btn-primary"%></li>
-          <li><%= link_to "Modifier mon profil", edit_buddy_path(@buddy), class: "btn btn-primary"  %></li>
-          <li><%= link_to "Retour à la liste des Buddies", buddies_path(@buddy), class: "btn btn-primary" %></li>
-          <li><%= link_to "Mes prestations", admin_prestations_path, class: "btn btn-primary" %></li>
-          <li><%= link_to "Mes reservations", admin_bookings_path(@buddy), class: "btn btn-primary" %></li>
+    <div class="card-positionner">
+        <div class="card-category-description">
+          <div class="description">
+              <p>Description</p>
+            <p><%= @buddy.description %></p>
         </div>
-      </ul>
+      </div>
     </div>
-  </div>
-    <div class="card-catergory">
-        <div class="description">
-          <p></p>
-        </div>
-    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 
 
 
@@ -51,4 +71,4 @@
         <% end %>
       </div>
     <% end %>
-  </div>
+</div>
