@@ -5,9 +5,9 @@
       <div class="card-product">
         <img src="https://picsum.photos/200" />
         <div class="card-product-infos">
-          <h3 style= "color:rgb(24, 49, 83)"><%= link_to presta.name, admin_prestation_path(presta), class:"text-decoration-none" %></h3>
+          <h3 style= "color:rgb(24, 49, 83)"><%= link_to presta.name, admin_prestation_path(presta), class:"titre-presta" %></h3>
           <p><%= presta.description  %></p>
-          <p><%= presta.price %>€</p>
+            <div class="price-product"><%= presta.price %>€</p></div>
           <div>
             <%= link_to "Réserver maintenant", new_prestation_booking_path(presta), class:"bouton-reservation" %>
           </div>
