@@ -11,11 +11,6 @@
   position: relative;
 }
 
-.card-product:h1{
-  color: rgb(24, 49, 83);
-}
-
-
 .fa-pen {
   position: absolute;
   top: 50%;
@@ -37,12 +32,6 @@
   width: 40%;
   object-fit: cover;
   border-radius: 15px;
-}
-
-.card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
 }
 
 .card-product p {
