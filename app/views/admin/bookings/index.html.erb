@@ -34,30 +34,22 @@
       </div>
     </div>
     <div class="booking-reservations">
-        <div class="bg-white rounded p-3 shadow">
-          <h4>Liste de toutes les demandes de prestations refusées</h4>
-          <div class="group-resa">
-            <% @refuseds.each do |refused| %>
-            <div class="validation">
-              <div class="validation-btn">
-                Date : <strong><%=  refused.date %></strong>  --  Prix : <strong> <%=  refused.prestation.price %></strong> €
-              </div>
+      <div class="bg-white rounded p-3 shadow">
+        <h4>Liste de toutes les demandes de prestations refusées</h4>
+        <div class="group-resa">
+          <% @refuseds.each do |refused| %>
+          <div class="validation">
+            <div class="validation-btn">
+              Date : <strong><%=  refused.date %></strong>  --  Prix : <strong> <%=  refused.prestation.price %></strong> €
             </div>
-          <% end %>
           </div>
+        <% end %>
         </div>
       </div>
+    </div>
+    <%= link_to '<- Retour', profil_buddy_path(current_user) %>
   </div>
 </div>
-
-<%# validation = pending %>
-
-
-
-
-
-
-
 
 <%# <h3>Liste de toutes les prestations terminées (optionnel)</h3>
 <%# validation = closed %>

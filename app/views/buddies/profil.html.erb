@@ -1,37 +1,36 @@
-<body>
-  <div class="container">
-    <div class="cards">
-      <div class="card-category" style="background-image: url(<%= image_path "profil-carac.png" %>)">
-        <div class="buddy-caractéristiques">
-          <h1><%=  %></h1>
-        </div>
-      </div>
-      <div class="card-category-mid">
-        <div class="buddy-name">
-          <%= @buddy.name %><br>
-          <div class="buddy-avatar">
-            <div class="avatar-img" style="background-image:  url(https://media.vogue.fr/photos/621f567e42cb113ca47921d9/2:3/w_2560%2Cc_limit/MCDBATM_WB060.jpg)">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="card-category-btn">
-        <ul>
-          <div class="boutons-params">
-            <li><%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation), class: "btn btn-primary"%></li>
-            <li><%= link_to "Modifier mon profil", edit_buddy_path(@buddy), class: "btn btn-primary"  %></li>
-            <li><%= link_to "Back to buddies list MF", buddies_path(@buddy), class: "btn btn-primary" %></li>
-            <li><%= link_to "Mes prestas admin", admin_prestations_path, class: "btn btn-primary" %></li>
-            <li><%= link_to "Historique des reservations", admin_bookings_path(@buddy), class: "btn btn-primary" %></li>
-          </div>
-        </ul>
+<div class="container">
+  <div class="cards">
+    <div class="card-category" style="background-image: url(<%= image_path "profil-carac.png" %>)">
+      <div class="buddy-caractéristiques">
+        <h1><%=  %></h1>
       </div>
     </div>
-      <div class="card-catergory">
-          <div class="description">
-            <p></p>
+    <div class="card-category-mid">
+      <div class="buddy-name">
+        <%= @buddy.name %><br>
+        <div class="buddy-avatar">
+          <div class="avatar-img" style="background-image:  url(https://media.vogue.fr/photos/621f567e42cb113ca47921d9/2:3/w_2560%2Cc_limit/MCDBATM_WB060.jpg)">
           </div>
+        </div>
       </div>
+    </div>
+    <div class="card-category-btn">
+      <ul>
+        <div class="boutons-params">
+          <li><%= link_to 'Ajouter une prestation', new_admin_prestation_path(@prestation), class: "btn btn-primary"%></li>
+          <li><%= link_to "Modifier mon profil", edit_buddy_path(@buddy), class: "btn btn-primary"  %></li>
+          <li><%= link_to "Retour à la liste des Buddies", buddies_path(@buddy), class: "btn btn-primary" %></li>
+          <li><%= link_to "Mes prestations", admin_prestations_path, class: "btn btn-primary" %></li>
+          <li><%= link_to "Mes reservations", admin_bookings_path(@buddy), class: "btn btn-primary" %></li>
+        </div>
+      </ul>
+    </div>
+  </div>
+    <div class="card-catergory">
+        <div class="description">
+          <p></p>
+        </div>
+    </div>
 
 
 
@@ -47,10 +46,9 @@
               <i class="fa-solid fa-pen"></i>
           <% end %>
         </div>
-        <%= link_to admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "are you sure Biatch?"} do %>
+        <%= link_to admin_prestation_path(presta), data: {turbo_method: :delete, turbo_confirm: "Es-tu sûr Biatch?"} do %>
           <i class="fa-solid fa-trash"></i>
         <% end %>
       </div>
     <% end %>
   </div>
-</body>
