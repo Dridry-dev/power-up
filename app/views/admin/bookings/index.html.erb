@@ -1,24 +1,63 @@
-<h1>index Admin Booking</h1>
+<h1>Valider mes demandes de prestations</h1>
+<div class="container py-5">
+  <div class="row">
+    <div class="booking-reservations">
+      <div class="bg-white rounded p-3 shadow">
+        <h4>Liste de toutes les demandes de prestations en attentes de validation</h4>
+        <div class="group-resa">
+        <% @pendings.each do |pending| %>
+        <div class="validation">
+          <div class="validation-btn">
+            Date : <strong><%=  pending.date %></strong>  --  Prix : <strong> <%=  pending.prestation.price %></strong> €
+          </div>
+          <div class="validation-btn">
+            <%= link_to "Valider", admin_booking_path(pending, validation: 1), data: { turbo_method: :patch }, class: "btn btn-outline-success btn-sm" %>
+            <%= link_to "Refuser", admin_booking_path(pending, validation: 2), data: { turbo_method: :patch }, class: "btn btn-outline-danger btn-sm" %>
+          </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="booking-reservations">
+      <div class="bg-white rounded p-3 shadow">
+        <h4>Liste de toutes les demandes de prestations validée</h4>
+        <div class="group-resa">
+          <% @validates.each do |validate| %>
+          <div class="validation">
+            <div class="validation-btn">
+              Date : <strong><%=  validate.date %></strong>  --  Prix : <strong> <%=  validate.prestation.price %></strong> €
+            </div>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="booking-reservations">
+        <div class="bg-white rounded p-3 shadow">
+          <h4>Liste de toutes les demandes de prestations refusées</h4>
+          <div class="group-resa">
+            <% @refuseds.each do |refused| %>
+            <div class="validation">
+              <div class="validation-btn">
+                Date : <strong><%=  refused.date %></strong>  --  Prix : <strong> <%=  refused.prestation.price %></strong> €
+              </div>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
-<h3>Liste de toutes les demandes de prestations en attentes de validation</h3>
 <%# validation = pending %>
-<% @pendings.each do |pending| %>
-  <%=  pending.date %> - <%=  pending.prestation.price %>€ -<%=  pending.validation %>
-  <%= link_to "Valider", admin_booking_path(pending, validation: 1), data: { turbo_method: :patch } %>
-  <%= link_to "Refuser", admin_booking_path(pending, validation: 2), data: { turbo_method: :patch }%><br>
-<% end %>
 
-<h3>Liste de toutes les demandes de prestations validée et en attentes réalisation</h3>
-<%# validation = validated %>
-<% @validates.each do |validate| %>
-<%=  validate.date %> - <%=  validate.prestation.price %>€ <br>
-<% end %>
 
-<h3>Liste de toutes les demandes de prestations refusées</h3>
-<%# validation = refused %>
-<% @refuseds.each do |refused| %>
-<%=  refused.date %> - <%=  refused.prestation.price %>€ <br>
-<% end %>
+
+
+
+
+
 
 <%# <h3>Liste de toutes les prestations terminées (optionnel)</h3>
 <%# validation = closed %>
