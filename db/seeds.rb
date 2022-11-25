@@ -15,7 +15,7 @@ puts "Importing 10 random heroes"
   User.create!(
     name: buddies['name'],
     description: buddies['connections'].first,
-    # photo: photo.attach(io: buddies['image'].first, filename: "#{buddies['name']}.png", content_type: "image/png"),
+    #photo: photo.attach(io: buddies['image'].first, filename: "#{buddies['name']}.png", content_type: "image/png"),
     email: "mail#{random_id_hero}@mail.com",
     password: "azerty"
   )
@@ -24,7 +24,7 @@ end
 User.create!(
   name: "bonjour",
   description: "C'est une super description que voilà",
-  # photo: photo.attach(io: buddies['image'].first, filename: "#{buddies['name']}.png", content_type: "image/png"),
+  #photo: cl_image_tag("PHILIPPE-ETCHEBEST-e1606153576338_uoanmf", crop: :thumb, gravity: :face),
   email: "mail@mail.com",
   password: "azerty"
 )
