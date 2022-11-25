@@ -1,13 +1,21 @@
-<h1>Booking index maggle</h1>
-<%# list from nearest to farest %>
-<p>Vous voulez reserver cette prestation sur d'autres jours ? C'est par <%= link_to 'ici', new_prestation_booking_path %> </p>
-Prestation est prévue pour le :<ul>
-  <% @bookings.each do |booking| %>
-  <li>
-  -- <%= booking.date %> -- <br>
-  <%= link_to 'See details', booking_path(id: booking.id, prestation_id: booking.prestation.id) %> --
-  <%= link_to "Edit", edit_booking_path(id: booking.id, prestation_id: booking.prestation.id) %> --
-  <%= link_to "Remove", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
-  </li>
-  <% end %>
-</ul>
+<h1>Liste de mes demandes de reservations</h1>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <p>Vous voulez reserver cette prestation sur d'autres jours ? C'est par <%= link_to 'ici', new_prestation_booking_path %> </p>
+        Prestation est prévue pour le :
+        <ul>
+        <% @bookings.each do |booking| %>
+          <li>
+          -- <%= booking.date %> -- <br>
+          <%= link_to 'Voir les details', booking_path(id: booking.id, prestation_id: booking.prestation.id) %> --
+          <%= link_to "Modifier", edit_booking_path(id: booking.id, prestation_id: booking.prestation.id) %> --
+          <%= link_to "Supprimer", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Tu es sûr?" } %>
+          </li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

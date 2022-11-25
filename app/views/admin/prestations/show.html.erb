@@ -1,8 +1,15 @@
 <h1>Prestation</h1>
-<%= link_to  "retour", admin_prestations_path%>
-
-<h2><%= @prestation.name %></h2>
-<h3>Description</h3>
-<p><%= @prestation.description %></p>
-<br>
-<p>Prix de la prestation (par jour) : <%= @prestation.price %>€</p>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+        <%= link_to  "<- Retour", admin_prestations_path%>
+        <h2><%= @prestation.name %></h2>
+        <h3>Description</h3>
+        <p><%= @prestation.description %></p>
+        <br>
+        <p>Prix de la prestation (par jour) : <%= @prestation.price %>€</p>
+      </div>
+    </div>
+  </div>
+</div>
